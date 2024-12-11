@@ -4,12 +4,12 @@ from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy_serializer import SerializerMixin
 from flask_migrate import Migrate
 
-# Define metadata for naming conventions of foreign keys
+
 metadata = MetaData(naming_convention={
     "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
 })
 
-# Initialize SQLAlchemy object
+
 db = SQLAlchemy(metadata=metadata)
 
 class Customer(db.Model, SerializerMixin):
